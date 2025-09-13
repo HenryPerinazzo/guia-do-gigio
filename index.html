@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O Mundo do Gigio: Guia Completo de Cuidados</title>
+    <title>🐹 O Mundo do Gigio</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -11,18 +11,26 @@
             margin: 0;
             padding: 0;
             background-color: #f9f7f3;
-            color: #333;
+            color: #444;
         }
         header {
-            background-color: #4CAF50;
+            background-color: #607D8B;
             color: white;
             text-align: center;
             padding: 2rem 1rem;
-            border-bottom: 5px solid #388E3C;
+            border-bottom: 5px solid #455A64;
         }
         header h1 {
             margin: 0;
             font-size: 2.8em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        header svg {
+            width: 50px;
+            height: 50px;
         }
         header p {
             margin-top: 0.5rem;
@@ -42,13 +50,14 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.08);
         }
         h2 {
-            color: #388E3C;
-            border-bottom: 2px solid #ddd;
+            color: #455A64;
+            border-bottom: 2px solid #eceff1;
             padding-bottom: 0.5rem;
             margin-top: 0;
+            font-size: 1.8em;
         }
         h3 {
-            color: #555;
+            color: #546E7A;
         }
         ul {
             list-style-type: '🐾 ';
@@ -64,27 +73,72 @@
             border-radius: 8px;
             border-left: 5px solid;
         }
-        .card-safe {
-            background-color: #e8f5e9;
-            border-color: #4CAF50;
-        }
-        .card-caution {
-            background-color: #fff3e0;
-            border-color: #fb8c00;
-        }
-        .card-danger {
-            background-color: #ffebee;
-            border-color: #e53935;
-        }
-        .card h3 {
-            margin-top: 0;
-        }
+        .card-safe { background-color: #e8f5e9; border-color: #4CAF50; }
+        .card-caution { background-color: #fff3e0; border-color: #fb8c00; }
+        .card-danger { background-color: #ffebee; border-color: #e53935; }
+        .card h3 { margin-top: 0; }
         .curiosity {
             background-color: #e3f2fd;
             border-left: 5px solid #2196F3;
             padding: 1rem;
             border-radius: 8px;
             margin-top: 1rem;
+        }
+        .photo-frame {
+            background-color: #fafafa;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .moldura {
+            width: 80%;
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 15px;
+            background: #fff;
+            border: 10px solid #D7CCC8; /* Cor da moldura */
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15), inset 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 4px;
+            aspect-ratio: 1 / 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .moldura img {
+            max-width: 100%;
+            max-height: 100%;
+            display: block;
+            border-radius: 2px;
+        }
+        .upload-btn-wrapper {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .btn-upload {
+            border: 2px solid #607D8B;
+            color: #607D8B;
+            background-color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .upload-btn-wrapper:hover .btn-upload {
+            background-color: #607D8B;
+            color: white;
+        }
+        .upload-btn-wrapper input[type=file] {
+            font-size: 100px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            cursor: pointer;
         }
         footer {
             text-align: center;
@@ -98,11 +152,29 @@
 <body>
 
     <header>
-        <h1>O Mundo do Gigio</h1>
+        <h1>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M14 12c0 .85-.35 1.6-.92 2.14C14.12 14.05 15 13.11 15 12c0-1.66-1.34-3-3-3s-3 1.34-3 3c0 1.11.88 2.05 1.86 2.14C10.35 13.6 10 12.85 10 12c0-1.1.9-2 2-2s2 .9 2 2zm-2-5c-2.76 0-5 2.24-5 5s2.24 5 5 5c.44 0 .86-.06 1.26-.17.09-.23.2-.45.33-.66C13.21 16.05 13 15.79 13 15.5c0-.69.45-1.28.98-1.5H14c.55 0 1-.45 1-1s-.45-1-1-1h-.52c-.22-.91-.98-1.63-1.9-1.87V10c0-.55-.45-1-1-1s-1 .45-1 1v.09c-.25.06-.49.15-.71.26.1-.21.16-.45.16-.7C10.16 8.52 9.2 7.8 8.19 7.8c-.53 0-1.01.21-1.37.55C6.42 7.95 6 7.51 6 7c0-.28.22-.5.5-.5H8c.55 0 1-.45 1-1s-.45-1-1-1H7C4.79 4 3 5.79 3 8c0 1.89 1.32 3.47 3.08 3.87C6.03 12.23 6 12.61 6 13c0 .55.45 1 1 1h1.4c.03 0 .05.01.08.01C8.28 14.58 8 15.25 8 16c0 1.47 1.01 2.71 2.32 2.95C9.62 19.46 9 20.16 9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1 0-.84-.62-1.54-1.68-1.95C15.99 18.71 17 17.47 17 16c0-.75-.28-1.42-.74-1.94.21-.12.41-.26.59-.41C18.68 12.47 20 10.89 20 9c0-2.21-1.79-4-4-4h-2z"/></svg>
+            O Mundo do Gigio
+        </h1>
         <p>Um guia de cuidados completo para nosso amiguinho peludo!</p>
     </header>
 
     <main class="container">
+        
+        <section id="retrato">
+            <h2>🖼️ O Retrato do Gigio</h2>
+            <div class="photo-frame">
+                <p>Carregue uma foto para ver o Gigio em sua moldura!</p>
+                <div class="moldura">
+                    <img id="fotoGigio" src="" alt="A foto do Gigio aparecerá aqui">
+                </div>
+                <div class="upload-btn-wrapper">
+                    <button class="btn-upload">Escolher uma foto</button>
+                    <input type="file" id="fotoInput" accept="image/*" />
+                </div>
+                <p style="font-size: 0.8em; color: #888; margin-top: 10px;">*A foto não é salva, ela aparece apenas no seu navegador.</p>
+            </div>
+        </section>
 
         <section id="lar">
             <h2>🏡 O Lar Perfeito do Gigio</h2>
@@ -133,6 +205,14 @@
                 <li><strong>RAÇÃO EXTRUSADA (10%):</strong> Uma ração de boa qualidade, onde todos os grãos são iguais. Isso evita que o Gigio escolha só o que é mais gostoso e tenha uma dieta desbalanceada.</li>
                 <li><strong>VEGETAIS FRESCOS (10%):</strong> Uma porção diária de folhas e legumes seguros.</li>
             </ol>
+
+            <h3>Marcas de Ração Recomendadas</h3>
+            <p>Ao escolher a ração, procure por marcas de qualidade que ofereçam um produto extrusado e específico para porquinhos-da-índia. Duas excelentes opções disponíveis no Brasil são:</p>
+            <ul>
+                <li><strong>Nutrópica</strong></li>
+                <li><strong>Megazoo</strong></li>
+            </ul>
+            <p>Ambas são marcas que formulam suas rações com níveis corretos de Vitamina C e fibras, sem adição de sementes, grãos ou corantes artificiais.</p>
 
             <div class="food-list">
                 <div class="card card-safe">
@@ -182,7 +262,7 @@
         </section>
 
         <section id="curiosidades">
-            <h2>✨ Curiosidades do Mundo do Gigio</h2>
+            <h2>✨ Curiosidades do Mundo dos Porquinhos</h2>
             <p>Alguns fatos divertidos e interessantes sobre nosso amigo!</p>
 
             <div class="curiosity">
@@ -205,6 +285,27 @@
         <p>Feito com carinho para o Gigio e sua família incrível. ❤️</p>
         <p>Cuidar de um pet é uma aventura cheia de aprendizados e muito amor!</p>
     </footer>
+
+    <script>
+        const fotoInput = document.getElementById('fotoInput');
+        const fotoGigio = document.getElementById('fotoGigio');
+
+        fotoInput.addEventListener('change', function(event) {
+            // Verifica se um arquivo foi selecionado
+            if (event.target.files && event.target.files[0]) {
+                const reader = new FileReader();
+                
+                // Quando o arquivo for lido, ele será colocado na tag img
+                reader.onload = function(e) {
+                    fotoGigio.src = e.target.result;
+                    fotoGigio.alt = "Foto do Gigio";
+                }
+                
+                // Lê o arquivo de imagem como uma URL de dados
+                reader.readAsDataURL(event.target.files[0]);
+            }
+        });
+    </script>
 
 </body>
 </html>
