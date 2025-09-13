@@ -161,18 +161,12 @@
 
     <main class="container">
         
-        <section id="retrato">
+<section id="retrato">
             <h2>🖼️ O Retrato do Gigio</h2>
             <div class="photo-frame">
-                <p>Carregue uma foto para ver o Gigio em sua moldura!</p>
                 <div class="moldura">
-                    <img id="fotoGigio" src="" alt="A foto do Gigio aparecerá aqui">
+                    <img id="fotoGigio" src="https://github.com/HenryPerinazzo/guia-do-gigio/blob/main/foto-gigio.jpg" alt="Foto do nosso porquinho-da-índia, o Gigio!">
                 </div>
-                <div class="upload-btn-wrapper">
-                    <button class="btn-upload">Escolher uma foto</button>
-                    <input type="file" id="fotoInput" accept="image/*" />
-                </div>
-                <p style="font-size: 0.8em; color: #888; margin-top: 10px;">*A foto não é salva, ela aparece apenas no seu navegador.</p>
             </div>
         </section>
 
@@ -285,27 +279,6 @@
         <p>Feito com carinho para o Gigio e sua família incrível. ❤️</p>
         <p>Cuidar de um pet é uma aventura cheia de aprendizados e muito amor!</p>
     </footer>
-
-    <script>
-        const fotoInput = document.getElementById('fotoInput');
-        const fotoGigio = document.getElementById('fotoGigio');
-
-        fotoInput.addEventListener('change', function(event) {
-            // Verifica se um arquivo foi selecionado
-            if (event.target.files && event.target.files[0]) {
-                const reader = new FileReader();
-                
-                // Quando o arquivo for lido, ele será colocado na tag img
-                reader.onload = function(e) {
-                    fotoGigio.src = e.target.result;
-                    fotoGigio.alt = "Foto do Gigio";
-                }
-                
-                // Lê o arquivo de imagem como uma URL de dados
-                reader.readAsDataURL(event.target.files[0]);
-            }
-        });
-    </script>
-
 </body>
 </html>
+
